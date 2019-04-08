@@ -5,5 +5,11 @@ Das Projekt ist öffentlich, das kann also jeder.
 
 https://github.com/apInno/Test.git
 
+--
+
+Jetzt auch in den Linux-Rechner geklont und dann wird gleich von dort gepusht.
+
+
+
 
 
