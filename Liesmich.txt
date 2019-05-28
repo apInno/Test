@@ -1,5 +1,11 @@
 28.05.2019:
 
+Hat funktioniert, der 2. Account konnte auch wieder die Änderungen hochladen!
+
+
+---
+28.05.2019:
+
 2. Clone erzeugt, der sollte dann mit einem anderen Account wieder hochgeladen werden.
 
 ---
