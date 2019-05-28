@@ -1,5 +1,11 @@
 28.05.2019:
 
+2. Clone erzeugt, der sollte dann mit einem anderen Account wieder hochgeladen werden.
+
+---
+
+28.05.2019:
+
 Beim Push wurde dann eine Fehlermeldung in das Protokollfenster geschrieben, dann
 Benutzername und Passwort abgefragt und danach alles ordentlich gepusht.
 
