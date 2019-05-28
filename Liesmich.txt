@@ -1,3 +1,11 @@
+28.05.2019:
+
+Neueste immer oben!!
+
+Hier jetzt die Liesmich angepasst und dann kommt der Versuch, diese zu synchen!
+
+---
+Alt:
 Offensichtlich hatte ich schon einen Account angelegt.
 Diesen habe ich jetzt reaktiviert und das Testprojekt geklont.
 
@@ -8,6 +16,8 @@ https://github.com/apInno/Test.git
 --
 
 Jetzt auch in den Linux-Rechner geklont und dann wird gleich von dort gepusht.
+
+--
 
 
 
