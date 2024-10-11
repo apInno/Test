@@ -1,0 +1,41 @@
+Github limitiert die Dateigröße.
+
+Wenn ich eine große Datei in das Repository übertragen habe, hilft es nicht, sie einfach mit einem Commit zu entfernen.
+Über die commit-Dateien sind diese immer noch im Repo vorhanden und müssen auch dort entfernt werden.
+
+Git's filter-branch zur Rettung
+
+Aus einer Doku:
+
+Nehmen wir an, Sie haben in einem früheren Commit versehentlich ein 15 MB großes Foto Ihres CEO namens ceo.jpg hinzugefügt. 
+Um die Datei vollständig aus dem Repository zu entfernen, müssen Sie den folgenden Befehl im Verzeichnis Ihres Projekts ausführen:
+
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch path/to/ceo.jpg' --prune-empty --tag-name-filter cat -- --all
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch BorlandBuilder6Registry/ile_meggle_04.reg' --prune-empty --tag-name-filter cat -- --all
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch BorlandBuilder6Registry/ile_meggle_04 01.reg' --prune-empty --tag-name-filter cat -- --all
+!!!!! Die zweite Datei hat nicht funktioniert, diese wurde mit dem Befehl nicht aus dem Commit gelöscht!
+Um nicht weiter rumzusuchen mache ich einen neuen Clone und kopiere die vorher gesicherten Dateien da rein, dann sind zumindest alle Daten wirde vorhanden.
+
+Wenn die Datei erfolgreich entfernt wurde, sollten Sie eine Ausgabe wie diese sehen:
+
+Rewrite ee94db7633e1bf370512d95e5ab57b851ad6c8cf (5/5)
+Ref 'refs/heads/master' wurde umgeschrieben
+Aktualisieren Sie Ihre .gitignore-Datei
+An diesem Punkt sollten Sie Ihre .gitignore-Datei aktualisieren, um zu verhindern, dass diese Datei in Zukunft versehentlich erneut übertragen wird.
+
+
+
+
+Erzwingen Sie einen Push an Ihre Remotes.
+Wenn Sie die große Datei auf einen entfernten Host (z. B. GitHub) übertragen haben, müssen Sie die Änderungen erzwingen, um alle neu geschriebenen Commits zu aktualisieren.
+
+Ein Force Push kann gefährlich sein, insbesondere wenn Sie mit anderen Entwicklern zusammenarbeiten. 
+Wenn Sie also erfahrene Git-Benutzer in Ihrem Team haben, sollten Sie sich mit ihnen beraten, bevor Sie diesen Schritt ausführen, 
+oder sich über die Folgen von Force Push informieren.
+
+Sobald Sie bereit sind, führen Sie diesen Befehl aus:
+
+git push origin --force --all
+Hinweis: Der Speicherplatz wird auf dem Host nicht unbedingt sofort wiederhergestellt. Sie müssen warten, bis die Garbage Collection ausgeführt wird, 
+bevor die Größe neu berechnet wird.
+

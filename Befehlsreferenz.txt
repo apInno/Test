@@ -1,0 +1,116 @@
+
+
+git add 
+	Legt fest, welche Dateien versioniert werden sollen.
+
+git clone https://github.com/libgit2/libgit2
+git clone https://github.com/libgit2/libgit2 mylibgit
+	Ein Repository in ein Verzeichnis (libgit2, mylibgit) klonen.
+	
+	
+
+git commit 
+	Änderungen Commiten.
+	git commit -m "Story 182: fix benchmarks for speed"
+	git commit -a -m 'Add new benchmarks'
+		Durch den Parameter -a kann die Staging Area für alle schon versionierten Dateien übersprungen werden.
+	git commit --amend --no-edit
+		Commit-Message ändern.
+
+git config
+	Konfigurationsbefehle zu Git.
+	
+git config <key>
+	Prüfen, welcher Wert für den Parameter eingestellt ist.
+	z.B. git config user.name
+	
+git config --global init.defaultBranch main
+	Den Standard-Branch-Namen ändern (Meist master).
+	
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com	
+	Konfigurieren des Benutzernamen und der EMail-Adresse.
+
+git config --list --show-origin
+	Zeigt eine Liste der Konfigurationen in den Verzeichnissen (Programm-, Benutzer- und Projektverzeichnis).
+	Hier: 	C:/Program Files/Git/etc/gitconfig  
+			C:/Users/Andreas Pesch/.gitconfig
+			.git/config
+
+git count-objects -vH
+	Aktuelle Größe des Repo festellen.
+
+git diff
+	Anzeigen der Änderungen in Dateien, die noch nicht zum commit vorgemerkt sind.
+
+git diff --staged
+	Anzeigen der Änderungen der zum commit vorgemerkten Dateien.
+	
+git help <verb>
+git <verb> --help
+man git-<verb>
+	Hilfe holen. Bsp: git add -h
+
+
+git fetch
+	Der Befehl git fetch kommuniziert mit einem entfernten Repository und holt alle Informationen, die sich in diesem Repository befinden, aber nicht in Ihrem aktuellen Repository und speichert sie in Ihrer lokalen Datenbank.
+
+git init 
+	Erstellt ein neues Repositorium.
+	git init --bare <directory>
+		Erstellt ein Bare-Repo.
+	Du kannst git init --separate-git-dir für ein bestehendes Repository aufrufen und das Verzeichnis
+	.git dir wird zum angegebenen  Pfad verschoben.
+	git init --separate-git-dir="C:\Users\Andreas Pesch\Documents\Wolke\Git-seperate-Dir\Git-Test"
+	
+git log
+	Anzeigen der Historie.
+	git log --pretty=oneline
+	git log --pretty=format:"%h - %an, %ar : %s"
+
+git merge --no-ff AndreasMeggleRepo/master
+	Merged den Branch AndreasMeggleRepo/master in den aktuellen Branch.
+
+git mv file_from file_to
+	Verschieben / Umbenennen einer Datei.
+	Wenn diee einfach im Verzeichnis umbenannt wird, gibt es keine Historie, da git das Umbenennen nicht verfolgt/verfolgen kann.
+	mit git mv bleibt die Historie erhalten.
+
+git pull
+	Der git pull Befehl ist im Grunde eine Kombination aus den git fetch und git merge Befehlen, wobei Git von dem angegebenen Remote holt und dann sofort versucht, es in den Branch, auf dem Sie gerade sind, zu integrieren.
+
+
+git push
+	Der git push Befehl wird benutzt, um mit einem anderen Repository zu kommunizieren, zu ermitteln, was die lokale Datenbank enthält, die die entfernte nicht hat und dann die Differenz in das entfernte Repository zu pushen. Es erfordert Schreibzugriff auf das entfernte Repository und wird daher in der Regel auf irgend eine Weise authentifiziert.
+
+git rev-list --objects --all |
+  git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' |
+  sed -n 's/^blob //p' |
+  sort --numeric-sort --key=2 |
+  cut -c 1-12,41- |
+  $(command -v gnumfmt || echo numfmt) --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest
+	List all files in a git repo, sorted by size ascending
+
+git status
+	Zustand prüfen.
+	git status -s oder git status --short für eine Kurzform der Ausgabe.
+
+
+git rm --cached <file>...
+	Eine oder mehrere Datei(en) aus der Staging Area entfernen.
+
+git rm <Datei>
+	Wenn eine Datei einfach gelöscht wird, erscheint sie im Status als gelöscht und kann für den nächsten commit gestaged 
+	werden.
+	Mit git rm ... wird sie zum löschen vorgemerkt und ist nach dem nächsten commit gelöscht und aus der Versionierung verschwunden!
+	
+	
+	
+
+git config --global merge.tool kdiff3
+git config --global mergetool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe"
+git config --global mergetool.kdiff3.trustExitCode false
+
+git config --global diff.guitool kdiff3
+git config --global difftool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe"
+git config --global difftool.kdiff3.trustExitCode false

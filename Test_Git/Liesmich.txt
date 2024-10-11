@@ -1,0 +1,1 @@
+Hier kann jetzt mit verschiedenen Verzeichnissen/Branches usw. getestet werden, was in Git und der Historie in bestimmten Situationen passiert.
